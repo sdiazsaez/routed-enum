@@ -1,0 +1,43 @@
+{
+    "name"        : "larangular/routed-enum",
+    "description" : "routing-enum",
+    "license"     : "MIT",
+    "authors"     : [
+        {
+            "name" : "Simon Diaz",
+            "email": "sdiaz.sz@gmail.com"
+        }
+    ],
+    "require"     : {
+        "php"                          : ">=7.1",
+        "illuminate/support"           : "~5.8.0|^6.0|^7.0|^8.0",
+        "illuminate/routing"           : "~5.8.0|^6.0|^7.0|^8.0",
+        "larangular/support"           : "^0.1.0|^0.2.0",
+        "larangular/installable"       : "^0.1.0|^0.2.0",
+        "larangular/routing-controller": "^0.1.0|^0.2.0"
+    },
+    "require-dev" : {
+        "orchestra/testbench": "*",
+        "phpunit/phpunit"    : "^7.0"
+    },
+    "autoload"    : {
+        "psr-4": {
+            "Larangular\\RoutedEnum\\": "./src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Larangular\\RoutedEnum\\tests\\": "./tests/"
+        }
+    },
+    "extra"       : {
+        "laravel": {
+            "providers": [
+                "Larangular\\RoutedEnum\\RoutedEnumServiceProvider"
+            ],
+            "aliases"  : {
+                "EnumHelper": "Larangular\\RoutedEnum\\Facades\\EnumHelper"
+            }
+        }
+    }
+}
