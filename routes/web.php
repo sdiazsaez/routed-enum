@@ -3,8 +3,8 @@
 Route::group([
     'prefix'     => config('routed-enum.route-prefix'),
     'middleware' => 'api',
-    'namespace'  => 'Larangular\Enum',
+    'namespace'  => 'Larangular\RoutedEnum\Http\Controllers',
     'as'         => 'larangular.api.routed-enum.',
 ], static function () {
-    Route::get('{enum}', 'Quote\Gateway@quotePaymentDetails');
+    Route::resource('/', 'Gateway');
 });
