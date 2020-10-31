@@ -6,5 +6,5 @@ Route::group([
     'namespace'  => 'Larangular\RoutedEnum\Http\Controllers',
     'as'         => 'larangular.api.routed-enum.',
 ], static function () {
-    Route::resource('/', 'Gateway');
+    Route::resource('enum', 'Gateway');
 });
