@@ -26,4 +26,12 @@ abstract class BasicEnum {
     public static function getConstants(): array {
         return app('routed-enum-helper')->getConstants(static::class);
     }
+
+    public static function getLabel($index): ?string {
+        $m = 'getLabels';
+        $labels = (method_exists(static::class, $m))
+            ? call_user_func(static::class . '::' . $m)
+            : [];
+        return @$labels[$index];
+    }
 }
