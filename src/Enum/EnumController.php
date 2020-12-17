@@ -4,18 +4,14 @@ namespace Larangular\RoutedEnum\Enum;
 
 use Illuminate\Database\Eloquent\Collection;
 use Larangular\RoutedEnum\Models\Enum;
-use Larangular\RoutingController\{Contracts\HasResource, Contracts\IGatewayModel, Controller, MakeResponse, Resource};
+use Larangular\RoutingController\{Contracts\IGatewayModel, Controller, MakeResponse};
 
-abstract class EnumController extends Controller implements IGatewayModel, HasResource {
+abstract class EnumController extends Controller implements IGatewayModel {
     use MakeResponse;
 
     abstract public function enumValues(): array;
 
     abstract public function onCreateEnum($enumKey, $key, $value): Enum;
-
-    public function resource() {
-        return Resource::class;
-    }
 
     public function model() {
         // TODO: Implement model() method.
