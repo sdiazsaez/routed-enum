@@ -51,7 +51,9 @@ abstract class EnumController extends Controller implements IGatewayModel {
         $labels = [];
         try {
             $e = $this->getEnumClass($enumKey);
-            $labels = \call_user_func($e . '::getLabels');
+            if(method_exists($e, 'getLabels')) {
+                $labels = \call_user_func($e . '::getLabels');
+            }
         } catch (\Exception $e) {
         }
 
